@@ -1,7 +1,9 @@
+/* ---------- General ---------- */
 body {
     background-color: darkslategrey;
 }
 
+/* ---------- Login ---------- */
 .container {
     display: flex;
     flex-direction: column;
@@ -11,6 +13,7 @@ body {
 }
 
 form {
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,4 +45,30 @@ width: 100%;
 
 input[type="submit"]:hover {
     background-color: lightblue;
+}
+
+/* ---------- Cart ---------- */
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+/* ---------- Footer ---------- */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    color: white;
 }
