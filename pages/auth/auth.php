@@ -1,4 +1,8 @@
-<?php require_once('../include/header.php') ?>
+<?php
+$title = "Login";
+$mvc = "auth";
+require_once('../../include/header.php')
+?>
 
 <div class="container">
     <form>
@@ -8,4 +12,4 @@
     </form>
 </div>
 
-<?php require_once('../include/footer.php') ?>
+<?php require_once('../../include/footer.php') ?>
