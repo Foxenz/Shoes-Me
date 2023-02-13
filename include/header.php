@@ -12,7 +12,7 @@
     <title><?= $title ?></title>
     <!-- LINK CSS AND SCRIPT FOR MVC -->
     <link rel="stylesheet" href="<?= $mvc ?>_style.css">
-    <script src="<?= $mvc ?>_script.css"></script>
+    <script src="<?= $mvc ?>_script.js"></script>
 </head>
 
 <body>
@@ -24,12 +24,35 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $title == "Accueil" ? "./pages/auth/auth.php" : "../auth/auth.php" ?>">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $title == "Accueil" ? "./pages/cart/cart.php" : "../cart/cart.php" ?>">Cart</a>
-                    </li>
+                    <?php
+                    if (!isset($_COOKIE['userID'])) :
+                    ?>
+                        <li class="nav-item login_nav">
+                            <a class="nav-link" href="<?= $title == "Accueil" ? "./pages/auth/auth.php" : "../auth/auth.php" ?>">Login</a>
+                        </li>
+                    <?php
+                    endif;
+                    if (isset($_COOKIE['userID'])) :
+                    ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $title == "Accueil" ? "./pages/profil/profil.php" : "../auth/profil.php" ?>">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $title == "Accueil" ? "./pages/auth/logout.php" : "../auth/logout.php" ?>">Logout</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
+                    <?php
+                    if (isset($_COOKIE['userID'])) :
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= $title == "Accueil" ? "./pages/cart/cart.php" : "../cart/cart.php" ?>">Cart</a>
+                        </li>
+                    <?php
+                    endif;
+                    ?>
                 </ul>
             </div>
         </div>

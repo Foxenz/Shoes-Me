@@ -27,7 +27,7 @@ input[type="email"], input[type="password"] {
 }
 
 input[type="submit"] {
-width: 100%;
+    width: 100%;
     padding: 8px;
     font-size: 16px;
     background-color: blue;
@@ -40,4 +40,15 @@ width: 100%;
 
 input[type="submit"]:hover {
     background-color: lightblue;
+}
+
+#error {
+    background-color: white;
+    border: 1px solid black;
+    box-shadow: 0 0 4px 1px black;
+    margin-top: 16px;
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 16px;
 }

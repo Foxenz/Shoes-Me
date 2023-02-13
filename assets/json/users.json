@@ -1,8 +1,18 @@
 {
   "users": [
     {
-      "email": "test@gmail.com",
-      "password": "test"
+      "id": 1,
+      "email": "roosensalexandre@gmail.com",
+      "password": "test",
+      "firstName": "Alexandre",
+      "lastName": "Roosens"
+    },
+    {
+      "id": 2,
+      "email": "test2@gmail.com",
+      "password": "test2",
+      "firstName": "test2",
+      "lastName": "test2"
     }
   ]
 }

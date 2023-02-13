@@ -3,6 +3,11 @@ body {
     background-color: darkslategrey;
 }
 
+/* ---------- Header ---------- */
+.profil_nav {
+    display: none;
+}
+
 /* ---------- Footer ---------- */
 footer {
     position: absolute;
