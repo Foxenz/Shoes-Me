@@ -7,7 +7,7 @@
     height: 100vh;
 }
 
-form {
+#formLogin {
     width: 300px;
     display: flex;
     flex-direction: column;
