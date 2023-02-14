@@ -1,5 +1,8 @@
-<footer>
-    <span>All right reserved by <a href="https://foxenz.github.io/" target="_blank">Alexandre Roosens</a> - 2022</span>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+    </div>
 </footer>
 </body>
 

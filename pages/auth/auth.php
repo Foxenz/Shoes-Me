@@ -1,10 +1,10 @@
 <?php
 $title = "Login";
 $mvc = "auth";
-require_once('../../include/header.php')
+require_once('../../include/nav.php')
 ?>
 
-<div class="container">
+<div class="auth_container">
     <form id="formLogin">
         <input type="email" placeholder="Email" id="email">
         <input type="password" placeholder="Mot de passe" id="password">
