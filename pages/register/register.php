@@ -8,9 +8,11 @@
 
     <!-- BOOTSTRAP AND JQUERY -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- STYLE AND SCRIPT -->
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/script.js"></script>
 
     <!-- TITLE -->
     <title>Inscription</title>
