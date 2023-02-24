@@ -22,3 +22,15 @@
             </div>
         </div>
     </nav>
+
+    <script>
+        // Sélectionnez votre icône de menu et votre élément de navigation
+        const menuIcon = document.querySelector('.navbar-toggler');
+        const menuNav = document.querySelector('#navbarSupportedContent');
+
+        // Ajoutez un écouteur d'événements de clic à votre icône de menu
+        menuIcon.addEventListener('click', function() {
+            // Ajoutez ou supprimez la classe "show" pour votre élément de navigation
+            menuNav.classList.toggle('show');
+        });
+    </script>
