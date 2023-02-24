@@ -12,7 +12,7 @@
 
     <!-- STYLE AND SCRIPT -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <script src="../../assets/js/script.js"></script>
+    <script src="./shop.js"></script>
 
     <!-- TITLE -->
     <title>Shop</title>
