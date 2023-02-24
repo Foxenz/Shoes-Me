@@ -2,18 +2,28 @@
 session_start(); // Démarrage de la session
 require_once '../php/config.php'; // On inclut la connexion à la base de données
 
-// Récupération de la catégorie du paramètre de filtre
+// Récupération des paramètres de filtre
 $category = isset($_POST['category']) ? $_POST['category'] : '';
+$minPrice = isset($_POST['minPrice']) ? $_POST['minPrice'] : 0;
+$maxPrice = isset($_POST['maxPrice']) ? $_POST['maxPrice'] : 999999;
+$search = isset($_POST['search']) ? $_POST['search'] : '';
+
+// Préparation de la requête SQL en fonction des paramètres de filtre
+$sql = "SELECT * FROM articles WHERE price >= :minPrice AND price <= :maxPrice";
+$params = array(':minPrice' => $minPrice, ':maxPrice' => $maxPrice);
 
 if (!empty($category)) {
-    // Récupération des articles de la catégorie sélectionnée
-    $req = $bdd->prepare("SELECT * FROM articles WHERE category = '$category'");
-} else {
-    // Récupération de tous les articles
-    $req = $bdd->prepare('SELECT * FROM articles');
+    $sql .= " AND category = :category";
+    $params[':category'] = $category;
 }
 
-$req->execute();
+if (!empty($search)) {
+    $sql .= " AND title LIKE :search";
+    $params[':search'] = "%$search%";
+}
+
+$req = $bdd->prepare($sql);
+$req->execute($params);
 $data = $req->fetchAll();
 
 echo json_encode($data);

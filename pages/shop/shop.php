@@ -36,16 +36,40 @@
     require_once '../../include/nav.php';
     ?>
 
-    <select id="filter">
-        <option value="">Tous les articles</option>
-        <option value="Air Force 1">Air Force 1</option>
-        <option value="Jordan 1">Jordan 1</option>
-        <option value="Jordan 4">Jordan 4</option>
-        <option value="Dunk">Dunk</option>
-    </select>
-
     <!-- Section-->
     <section class="py-5">
+        <!-- Bouton de filtres -->
+        <div class="row">
+            <div class="col-2"></div>
+
+            <div class="form-group col-2">
+                <label for="category-filter">Catégorie</label>
+                <select id="category-filter" class="form-control">
+                    <option value="">Tous</option>
+                    <option value="Jordan 1">Jordan 1</option>
+                    <option value="Jordan 4">Jordan 4</option>
+                    <option value="Dunk">Dunk</option>
+                    <option value="Air Force 1 ">Air Force 1</option>
+                </select>
+            </div>
+
+            <div class="form-group col-2">
+                <label for="min-price-filter">Prix minimum</label>
+                <input type="number" id="min-price-filter" class="form-control" value="" />
+            </div>
+            <div class="form-group col-2">
+                <label for="max-price-filter">Prix maximum</label>
+                <input type="number" id="max-price-filter" class="form-control" value="" />
+            </div>
+
+            <div class="form-group col-2">
+                <label for="search-filter">Recherche</label>
+                <input type="text" id="search-input" class="form-control" />
+            </div>
+
+            <div class="col-2"></div>
+        </div>
+
         <div class="container px-4 px-lg-5 mt-5">
             <div id="articles" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             </div>
