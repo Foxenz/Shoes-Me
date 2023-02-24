@@ -36,6 +36,14 @@
     require_once '../../include/nav.php';
     ?>
 
+    <select id="filter">
+        <option value="">Tous les articles</option>
+        <option value="Air Force 1">Air Force 1</option>
+        <option value="Jordan 1">Jordan 1</option>
+        <option value="Jordan 4">Jordan 4</option>
+        <option value="Dunk">Dunk</option>
+    </select>
+
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">

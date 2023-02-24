@@ -3,6 +3,7 @@ $(document).ready(function() {
     $.ajax({
         type: "post",
         url:  "../../php/getAllArticles.php",
+        data: { category: $("#filter").val() }, // Ajouter le paramètre de filtre
         success: function(data){
             data = JSON.parse(data);
             for (let i = 0; i < data.length; i++) {
@@ -29,5 +30,42 @@ $(document).ready(function() {
         error: function(data){
             alert("Erreur");
         }
+    });
+
+    // Système de filtre des articles
+    $("#filter").on("change", function() {
+        $("#articles").empty(); // Vider la liste d'articles
+        // Recharger les articles en fonction du filtre sélectionné
+        $.ajax({
+            type: "post",
+            url:  "../../php/getAllArticles.php",
+            data: { category: $("#filter").val() },
+            success: function(data){
+                data = JSON.parse(data);
+                for (let i = 0; i < data.length; i++) {
+                    $("#articles").append(
+                        `
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <img class="card-img-top" src="${data[i][7]}" alt="..." />
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5 class="fw-bolder">${data[i][1]}</h5>
+                                            ${data[i][4]} €
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../article/article.php?id=${data[i][0]}">Voir plus</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                    );
+                }
+            },
+            error: function(data){
+                alert("Erreur");
+            }
+        });
     });
 });
