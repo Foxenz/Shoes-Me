@@ -36,7 +36,7 @@
                                             <span class="h1 fw-bold mb-0">Shoes-Me</span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Connectez vous à votre compte</h5>
+                                        <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Connectez vous à votre compte</h5> -->
 
                                         <div class="form-outline mb-4">
                                             <input type="email" id="email" name="email" class="form-control form-control-lg" required="required" />
@@ -52,12 +52,10 @@
                                             <button id="connectButton" type="submit" class="btn btn-dark btn-lg btn-block">Connexion</button>
                                         </div>
 
-                                        <div class="alert alert-danger" id="error"></div>
-
                                         <p class="mb-5 pb-lg-2">Pas de compte ? <a style="text-decoration: none;" href="./pages/register/register.php">Inscrivez-vous ici</a></p>
 
+                                        <div class="alert alert-danger" id="error"></div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>

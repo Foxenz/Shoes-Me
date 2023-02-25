@@ -34,7 +34,7 @@
                                             <span class="h1 fw-bold mb-0">Shoes-Me</span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Créer un nouveau compte</h5>
+                                        <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Créer un nouveau compte</h5> -->
 
                                         <div class="row">
                                             <div class="form-outline mb-4 col-6">
@@ -120,13 +120,13 @@
                                             }
                                         }
                                         ?>
-
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
