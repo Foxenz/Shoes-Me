@@ -48,25 +48,22 @@ $(document).ready(function() {
 
 function addToCart(id, quantity) {
     // On vérifie si le panier existe déjà dans la session
-    var cart = sessionStorage.getItem('cart') ? JSON.parse(sessionStorage.getItem('cart')) : [];
-
-    // On cherche si l'article est déjà présent dans le panier
-    var itemIndex = cart.findIndex(function(item) {
-        return item.id === id;
-    });
-
-    // Si l'article est déjà présent, on met à jour sa quantité
-    if (itemIndex !== -1) {
-        cart[itemIndex].quantity += quantity;
+    if (!sessionStorage.getItem('cart')) {
+      // Si non, on initialise le panier
+      var cart = {};
     } else {
-        // Sinon, on ajoute l'article au panier
-        cart.push({
-            id: id,
-            quantity: quantity
-        });
+      // Si oui, on récupère le panier existant
+      var cart = JSON.parse(sessionStorage.getItem('cart'));
     }
-
+  
+    // On ajoute l'article au panier
+    if (cart[id]) {
+      cart[id] += quantity;
+    } else {
+      cart[id] = quantity;
+    }
+  
     // On sauvegarde le panier dans la session
     sessionStorage.setItem('cart', JSON.stringify(cart));
-}
+  }
 
