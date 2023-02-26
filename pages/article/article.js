@@ -58,9 +58,9 @@ function addToCart(id, quantity) {
   
     // On ajoute l'article au panier
     if (cart[id]) {
-      cart[id] += quantity;
+        cart[id] = cart[id] + parseInt(quantity);
     } else {
-      cart[id] = quantity;
+        cart[id] = parseInt(quantity);
     }
   
     // On sauvegarde le panier dans la session
