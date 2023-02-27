@@ -102,31 +102,31 @@ $(document).ready(function(){
         });
     });
     
-        // Confirmation de la commande
-        $("#confirm-order").click(function(){
-            // Récupération des données du panier
-            var cart = JSON.parse(sessionStorage.getItem('cart_'+idUser));
-            // Envoi des données à la base de données
-            $.ajax({
-                type: "post",
-                url:  "../../php/order.php",
-                data: {
-                    cart : cart,
-                    idUser : idUser
-                },
-                success: function(data){
-                    console.log(data);
-                    if(data == "success"){
-                        // Suppression du panier
-                        sessionStorage.removeItem('cart_'+idUser);
-                        alert("Commande confirmée");
-                    } else {
-                        alert("Stock inusffisant");
-                    }
-                },
-                error: function(data){
-                    alert("Erreur");
+    // Confirmation de la commande
+    $("#confirm-order").click(function(){
+        // Récupération des données du panier
+        var cart = JSON.parse(sessionStorage.getItem('cart_'+idUser));
+        // Envoi des données à la base de données
+        $.ajax({
+            type: "post",
+            url:  "../../php/order.php",
+            data: {
+                cart : cart,
+                idUser : idUser
+            },
+            success: function(data){
+                if(data == "success"){
+                    // Suppression du panier
+                    alert("Commande confirmée");
+                    sessionStorage.removeItem('cart_'+idUser);
+                    window.location.href = "../cart/cart.php";
+                } else {
+                    alert("Stock inusffisant");
                 }
-            });
+            },
+            error: function(data){
+                alert("Erreur");
+            }
         });
+    });
 });
