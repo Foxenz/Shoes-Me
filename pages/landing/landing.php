@@ -12,6 +12,7 @@
 
     <!-- STYLE AND SCRIPT -->
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="./landing.css">
     <script src="../../assets/js/script.js"></script>
 
     <!-- TITLE -->
@@ -36,17 +37,20 @@
     require_once '../../include/nav.php';
     ?>
 
-    <div class="container">
-        <div class="col-md-12">
-
-
-            <div class="text-center">
-                <h1 class="p-5">Bonjour <?php echo $data['pseudo']; ?> !</h1>
+    <div class="hero vh-100 d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h1 class="display-4 text-white">Shoes-Me</h1>
+                    <p class="text-white my-3">
+                        Nous savons que les Sneakers sont plus qu'une simple paire de chaussures,
+                        c'est un style de vie, une passion, une expression de soi-même.
+                    </p>
+                    <a href="../shop/shop.php" class="btn btn-outline-light">Voir nos produits</a>
+                </div>
             </div>
         </div>
     </div>
-
-    <?php require_once('../../include/footer.php') ?>
 </body>
 
 </html>

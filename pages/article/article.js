@@ -46,6 +46,7 @@ $(document).ready(function() {
     });
 }); 
 
+// Ajout d'un article au panier dans la session
 function addToCart(id, quantity) {
     // On vérifie si le panier existe déjà dans la session
     if (!sessionStorage.getItem('cart')) {
