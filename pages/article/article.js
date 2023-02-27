@@ -54,20 +54,30 @@ function addToCart(id, quantity, idUser) {
     // On vérifie si le panier existe déjà dans la session
     if (!sessionStorage.getItem('cart_' + idUser)) {
       // Si non, on initialise le panier
-      var cart = {};
+      var cart = [];
     } else {
       // Si oui, on récupère le panier existant
       var cart = JSON.parse(sessionStorage.getItem('cart_' + idUser));
     }
-  
-    // On ajoute l'article au panier
-    if (cart[id]) {
-        cart[id] = cart[id] + parseInt(quantity);
-    } else {
-        cart[id] = parseInt(quantity);
+    
+    alreadyInCart = false;
+    // each item in cart in jquery
+    $.each(cart, function(index, value) {
+        // if item already in cart, update quantity
+        if (value.id == id) {
+            value.quantity = parseInt(value.quantity) + parseInt(quantity);
+            alreadyInCart = true;
+        }
+    });
+
+    // if item not in cart, add it
+    if (!alreadyInCart) {
+        cart.push({
+            id: id,
+            quantity: quantity
+        });
     }
-  
-    // On sauvegarde le panier dans la session
+    
     sessionStorage.setItem('cart_' + idUser, JSON.stringify(cart));
   }
 

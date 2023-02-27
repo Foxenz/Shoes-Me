@@ -52,6 +52,11 @@
         <button id="clear-cart" class="btn btn-danger">Supprimer le panier</button>
     </div>
     <br />
+    <!-- Bouton pour confirmer le panier -->
+    <div class="text-center">
+        <button id="confirm-order" class="btn btn-success">Confirmer le panier</button>
+    </div>
+    <br />
 
     <?php require_once('../../include/footer.php') ?>
 </body>
