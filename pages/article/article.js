@@ -33,7 +33,7 @@ $(document).ready(function() {
                 <p class="lead">${data[0][3]}</p>
                 
                 <div class="d-flex">
-                    <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                    <input class="form-control me-3" id="inputQuantity" type="number" value="1" style="max-width: 6rem" />
                     <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addToCart(${id}, $('#inputQuantity').val(), ${idUser}); alert('Ajouté au panier')">
                         <i class="bi-cart-fill me-1"></i>
                         Ajouter au panier
