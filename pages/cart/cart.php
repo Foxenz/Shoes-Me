@@ -43,20 +43,25 @@
 
     <br />
 
-    <!-- Prix total -->
-    <div id="total-price" class="text-center"></div>
-    <br />
-
     <!-- Bouton pour supprimer le panier -->
-    <div class="text-center">
-        <button id="clear-cart" class="btn btn-danger">Supprimer le panier</button>
+    <div class="row text-center mb-4">
+        <div class="col-3"></div>
+
+        <div class="col-2">
+            <button id="clear-cart" class="btn btn-danger">Supprimer le panier</button>
+        </div>
+
+        <!-- Prix total -->
+        <div id="total-price" class="col-2"></div>
+        <br />
+
+        <div class="col-2">
+            <button id="confirm-order" class="btn btn-success">Confirmer le panier</button>
+        </div>
+
+        <div class="col-3"></div>
     </div>
-    <br />
-    <!-- Bouton pour confirmer le panier -->
-    <div class="text-center">
-        <button id="confirm-order" class="btn btn-success">Confirmer le panier</button>
-    </div>
-    <br />
+
 
     <?php require_once('../../include/footer.php') ?>
 </body>

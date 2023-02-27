@@ -52,9 +52,7 @@ $(document).ready(function(){
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div id="trash">
-                                        <a type="button" class="card-link-secondary small text-uppercase mr-3"><i class="fas fa-trash-alt mr-1"></i> Remove item </a>
-                                    </div>
+                                    <div></div>
                                     <p class="mb-0"><span><strong>${totalPrice} €</strong></span></p>
                                 </div>
                             </div>
