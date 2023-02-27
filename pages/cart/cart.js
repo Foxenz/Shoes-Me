@@ -101,6 +101,15 @@ $(document).ready(function(){
             }
         });
     });
+
+    // Affichage des boutons supression et confirmation
+    if (cart) {
+        $("#clear-cart").show();
+        $("#confirm-order").show();
+    } else {
+        $("#clear-cart").hide();
+        $("#confirm-order").hide();
+    }
     
     // Confirmation de la commande
     $("#confirm-order").click(function(){
@@ -121,7 +130,7 @@ $(document).ready(function(){
                     sessionStorage.removeItem('cart_'+idUser);
                     window.location.href = "../cart/cart.php";
                 } else {
-                    alert("Stock inusffisant");
+                    alert("Stock insuffisant");
                 }
             },
             error: function(data){

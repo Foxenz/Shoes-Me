@@ -34,9 +34,9 @@ $(document).ready(function() {
                 
                 <div class="d-flex">
                     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addToCart(${id}, $('#inputQuantity').val(), ${idUser}); alert('Item added to cart')">
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addToCart(${id}, $('#inputQuantity').val(), ${idUser}); alert('Ajouté au panier')">
                         <i class="bi-cart-fill me-1"></i>
-                        Add to cart
+                        Ajouter au panier
                     </button>
                 </div>
             </div>

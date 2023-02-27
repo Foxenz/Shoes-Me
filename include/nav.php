@@ -16,7 +16,7 @@
                 <form class="d-flex">
                     <a class="btn btn-outline-dark" href="../cart/cart.php">Panier
                         <i class="bi-cart-fill me-1"></i>
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        <!-- <span class="badge bg-dark text-white ms-1 rounded-pill">0</span> -->
                     </a>
                 </form>
             </div>
