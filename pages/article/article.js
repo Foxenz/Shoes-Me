@@ -2,6 +2,9 @@ $(document).ready(function() {
     // Récupération de l'id de l'article
     var id = window.location.search.split("=")[1];
 
+    // Récupération de l'utilisateur connecté
+    var idUser = sessionStorage.getItem('user');
+
     // Récupération de l'article via son id
     $.ajax({
         type: "post",
@@ -31,7 +34,7 @@ $(document).ready(function() {
                 
                 <div class="d-flex">
                     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                    <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addToCart(${id}, $('#inputQuantity').val()); alert('Item added to cart')">
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button" onclick="addToCart(${id}, $('#inputQuantity').val(), ${idUser}); alert('Item added to cart')">
                         <i class="bi-cart-fill me-1"></i>
                         Add to cart
                     </button>
@@ -47,14 +50,14 @@ $(document).ready(function() {
 }); 
 
 // Ajout d'un article au panier dans la session
-function addToCart(id, quantity) {
+function addToCart(id, quantity, idUser) {
     // On vérifie si le panier existe déjà dans la session
-    if (!sessionStorage.getItem('cart')) {
+    if (!sessionStorage.getItem('cart_' + idUser)) {
       // Si non, on initialise le panier
       var cart = {};
     } else {
       // Si oui, on récupère le panier existant
-      var cart = JSON.parse(sessionStorage.getItem('cart'));
+      var cart = JSON.parse(sessionStorage.getItem('cart_' + idUser));
     }
   
     // On ajoute l'article au panier
@@ -65,6 +68,6 @@ function addToCart(id, quantity) {
     }
   
     // On sauvegarde le panier dans la session
-    sessionStorage.setItem('cart', JSON.stringify(cart));
+    sessionStorage.setItem('cart_' + idUser, JSON.stringify(cart));
   }
 

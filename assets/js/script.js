@@ -23,9 +23,13 @@ $(document).ready(function() {
                 password : $("#password").val()
                 }, 
             success: function(data){
-                if(data == "Success"){
+                splitData = data.split("-");
+                console.log(data);
+                console.table(splitData);
+                if(splitData[0] == "Success"){
+                    sessionStorage.setItem('user', splitData[1]);
                     window.location.href = "../../pages/landing/landing.php";
-                }else if(data == "Erreur"){
+                }else if(splitData[0] == "Erreur"){
                     $("#error").css("color", "red").html("Mot de passe ou email incorrect");
                     $("#error").css("display", "block");
                 }

@@ -1,6 +1,7 @@
 $(document).ready(function(){
     // Récupération du panier depuis la session
-    var cart = JSON.parse(sessionStorage.getItem('cart'));
+    var idUser = sessionStorage.getItem('user');
+    var cart = JSON.parse(sessionStorage.getItem('cart_'+idUser));
 
     // Si le panier est vide on affiche un message
     if (!cart) {
@@ -78,9 +79,10 @@ $(document).ready(function(){
 
     // Suppression du panier
     $("#clear-cart").click(function(){
-        sessionStorage.removeItem('cart');
-        location.reload();
+        sessionStorage.removeItem('cart_'+idUser);
+        window.location.href = "../cart/cart.php";
     });
+    
 
     // Prix total
     var total = 0;
