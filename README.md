@@ -1,5 +1,10 @@
 # Projet-IFAPME
 
+## Projet
+
+Ce projet consiste à créer une boutique de vente de Sneakers. J'ai fais ce site en tant que projet pour mon examen de développement web. Il y a un système de connexion et d'inscription, un affichage d'article stocké dans une db, une simulation de panier et de confirmation de panier. 
+(L'incrémentaion dans le panier ne fonctionne pas encore)
+
 ## Connexion
 
 - Créer un formulaire de connexion avec des champs pour l'utilisateur et le mot de passe
